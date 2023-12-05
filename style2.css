@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(_c713d9d6-6e3f-4ad4-a99e-50207ae82d8a.jpg);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-size: contain; 
+    background-repeat:repeat-x ; 
+    
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Coloca o pseudo-elemento atrás de todos os outros elementos */
+    background-image: inherit;
+    background-size: cover;
+    filter: blur(4px); /* Ajuste o valor do blur conforme necessário */
+}
+
+
+
+
+
+
+div.content{
+    background-color: rgba(16, 37, 228, 0);
+    padding: 5px 40px 5px 40px;
+     position: relative;
+    z-index: 1; /* Certifica-se de que a "caixa de conteúdo" está na frente do pseudo-elemento */
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 4em;
+    font-family:Nabla;
+    margin-top: 20px;
+}
+
+.game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(100, 97, 97, 0.89);
+    width: 400px; /* Tamanho da div principal */
+    height: 400px; /* Tamanho da div principal */
+    border-radius: 50%; /* Cria a forma redonda para a div principal */
+    position: relative; /* Define a posição relativa para que as divs filhas sejam posicionadas em relação a ela */
+    margin-top: 60px;
+}
+
+.central-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(131, 40, 40, 0);
+    width: 360px; /* Tamanho da div central (círculo) */
+    height: 360px; /* Tamanho da div central (círculo) */
+    border-radius: 50%; /* Cria a forma redonda para a div central */
+    position: relative; /* Define a posição relativa */
+}
+
+.color {
+    width: 120px; /* Tamanho das cores */
+    height: 120px; /* Tamanho das cores */
+    border-radius: 50%; /* Cria a forma redonda */
+    position: absolute; /* Define a posição absoluta */
+}
+
+.vermelho {
+    background-color: red;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.azul {
+    background-color: blue;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.verde {
+    background-color: green;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.amarelo {
+    background-color: yellow;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+
+.piscar {
+    animation: piscar 0.5s alternate infinite;
+}
+
+@keyframes piscar {
+    0% {
+        background-color: inherit;
+    }
+    100% {
+        background-color: white;
+    }}
+
+
+    div.sorteada{background-color: rgb(223, 4, 205);
+     }
+
+     .button {
+        display: inline-block;
+        padding: 20px 27px;
+        margin: 1px;
+        font-size: 10px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #fff;
+        background-image: linear-gradient(to bottom right, #00c6ff, #0072ff);
+        border: none;
+        border-radius: 40px;
+        box-shadow: 0px 4px 0px #0072ff;
+        transition: all 0.2s ease-in-out;
+      }
+      
+      .button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 6px 0px #0072ff;
+      }
+      
+      .button:active {
+        transform: translateY(0px);
+        box-shadow: none;
+        background-image: linear-gradient(to bottom right, #0072ff, #00c6ff);
+      }
+      
+      .button:before,
+      .button:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+      }
+      
+      .button:before {
+        top: -3px;
+        left: -3px;
+        border-radius: 40px;
+        border-top: 3px solid #fff;
+        border-left: 3px solid #fff;
+      }
+      
+      
+      
